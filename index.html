@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="cyberpunk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мусо Шокиров | Full-Stack & AI-Augmented Developer</title>
+  <meta name="description" content="Резюме и портфолио Мусо Шокирова (whyudontcallme). 17 лет. Full-Stack разработка, Telegram-боты, интерактивный веб и AI-ускоренная инженерия.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Мусо Шокиров — Full-Stack Developer & AI-Augmented Engineer">
+  <meta property="og:description" content="17 лет. Разработка веб-приложений, Telegram-ботов и умных интерфейсов. Синергия глубокого понимания кода и возможностей ИИ.">
+  <meta property="og:type" content="website">
+  
+  <!-- Favicon SVG -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Matrix / Cyberpunk Background Canvas -->
+  <canvas id="matrix-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+  <!-- Ambient Glow Orbs for Modern Glass theme -->
+  <div class="ambient-glow glow-1" aria-hidden="true"></div>
+  <div class="ambient-glow glow-2" aria-hidden="true"></div>
+  <div class="ambient-glow glow-3" aria-hidden="true"></div>
+
+  <!-- Scanline Overlay for Cyberpunk mode -->
+  <div class="scanlines-overlay" aria-hidden="true"></div>
+
+  <!-- Header / Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="#hero" class="brand-logo">
+        <span class="logo-symbol">&gt;_</span>
+        <span class="logo-text">muso<span class="logo-dot">.</span>dev</span>
+        <span class="status-badge" title="Статус доступности">
+          <span class="status-pulse"></span>
+          <span>open to work</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav">
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link">Обо мне</a></li>
+          <li><a href="#skills" class="nav-link">Арсенал</a></li>
+          <li><a href="#projects" class="nav-link">Проекты</a></li>
+          <li><a href="#experience" class="nav-link">Опыт</a></li>
+          <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Theme Switcher -->
+        <button id="theme-toggle" class="btn-theme-toggle" aria-label="Переключить тему">
+          <span class="theme-icon icon-cyber">👾</span>
+          <span class="theme-icon icon-glass">💎</span>
+          <span class="theme-text" id="theme-label">Cyberpunk</span>
+        </button>
+
+        <!-- CLI Button -->
+        <button id="cli-open-btn" class="btn-cli-toggle" title="Открыть встроенный терминал [Ctrl + `]">
+          <span class="cli-icon">⌨️</span>
+          <span class="cli-btn-text">CLI</span>
+        </button>
+
+        <!-- Telegram CTA -->
+        <a href="https://t.me/byecash" target="_blank" rel="noopener noreferrer" class="btn-header-telegram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.79-1.59 4.58-1.87 5.09-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.32z"/>
+          </svg>
+          <span>@byecash</span>
+        </a>
+
+        <!-- Mobile Burger -->
+        <button class="burger-btn" id="burger-btn" aria-label="Открыть мобильное меню">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- SECTION 1: HERO -->
+    <section id="hero" class="hero-section">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <div class="hero-meta-badge">
+            <span class="badge-tag">17 YEARS OLD</span>
+            <span class="badge-separator">/</span>
+            <span class="badge-role">AI-AUGMENTED FULL-STACK DEVELOPER</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="title-greeting">Привет, я</span>
+            <span class="title-name glitch-text" data-text="Мусо Шокиров">Мусо Шокиров</span>
+            <span class="title-handle">@whyudontcallme</span>
+          </h1>
+
+          <p class="hero-lead">
+            Создаю быстрые веб-сервисы, умных Telegram-ботов и адаптивные интерфейсы.
+            Использую <strong>ИИ как интеллектуальный экзоскелет</strong> для ускорения разработки в разы без потери качества архитектуры.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://t.me/byecash" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.79-1.59 4.58-1.87 5.09-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.32z"/>
+              </svg>
+              <span>Обсудить проект в Telegram</span>
+            </a>
+            
+            <a href="#projects" class="btn btn-secondary">
+              <span>Смотреть проекты</span>
+              <span class="btn-arrow">→</span>
+            </a>
+
+            <button class="btn btn-terminal" id="hero-cli-trigger">
+              <span class="term-prefix">&gt;</span>
+              <span>Открыть терминал</span>
+            </button>
+          </div>
+
+          <div class="hero-quick-facts">
+            <div class="fact-item">
+              <span class="fact-icon">📍</span>
+              <span class="fact-text">Санкт-Петербург / Удалённо</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-icon">💻</span>
+              <span class="fact-text">35+ репозиториев на GitHub</span>
+            </div>
+            <div class="fact-item">
+              <span class="fact-icon">⚡</span>
+              <span class="fact-text">17 лет • Быстрый онбординг</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Widget in Hero -->
+        <div class="hero-terminal-card">
+          <div class="terminal-card-header">
+            <div class="terminal-card-buttons">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+            </div>
+            <div class="terminal-card-title">whyudontcallme@fsociety: ~/profile</div>
+            <div class="terminal-card-meta">bash</div>
+          </div>
+
+          <div class="terminal-card-body" id="hero-term-body">
+            <div class="term-line">
+              <span class="term-prompt">$</span>
+              <span class="term-command">cat philosophy.md</span>
+            </div>
+            <div class="term-output quote-highlight">
+              &ldquo;What if what we see isn't the real world, but just a guess of our minds?&rdquo;
+            </div>
+            <div class="term-line">
+              <span class="term-prompt">$</span>
+              <span class="term-command">whoami --verbose</span>
+            </div>
+            <div class="term-output">
+              <div class="json-preview">
+                <span class="json-brace">{</span><br>
+                &nbsp;&nbsp;<span class="json-key">"name"</span>: <span class="json-val">"Мусо Шокиров"</span>,<br>
+                &nbsp;&nbsp;<span class="json-key">"age"</span>: <span class="json-num">17</span>,<br>
+                &nbsp;&nbsp;<span class="json-key">"role"</span>: <span class="json-val">"Full-Stack Developer"</span>,<br>
+                &nbsp;&nbsp;<span class="json-key">"ai_mindset"</span>: <span class="json-val">"Co-pilot &amp; multiplier, not a crutch"</span>,<br>
+                &nbsp;&nbsp;<span class="json-key">"stack"</span>: [<span class="json-val">"JS/TS"</span>, <span class="json-val">"Python"</span>, <span class="json-val">"TG Bots"</span>, <span class="json-val">"Web3D/Audio"</span>],<br>
+                &nbsp;&nbsp;<span class="json-key">"telegram"</span>: <span class="json-val">"@byecash"</span><br>
+                <span class="json-brace">}</span>
+              </div>
+            </div>
+            <div class="term-line typing-line">
+              <span class="term-prompt">$</span>
+              <span class="term-typewriter" id="hero-typewriter"></span>
+              <span class="cursor-blink">█</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT & AI PHILOSOPHY -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;identity&gt;</span>
+          <h2 class="section-title">Обо мне &amp; Подход к разработке</h2>
+          <p class="section-desc">17 лет, независимое инженерное мышление и новый стандарт продуктивности</p>
+        </div>
+
+        <div class="about-grid">
+          <!-- Main Card: Philosophy on AI -->
+          <div class="about-card philosophy-card">
+            <div class="card-badge-top">
+              <span class="badge-icon">🧠</span>
+              <span>Моя парадигма</span>
+            </div>
+            <h3 class="philosophy-title">ИИ — это не костыль, а интеллектуальный экзоскелет</h3>
+            
+            <p class="philosophy-text">
+              Мне <strong>17 лет</strong>. Я принадлежу к поколению инженеров, для которых искусственный интеллект — естественная среда разработки.
+            </p>
+            <p class="philosophy-text">
+              Для слабых разработчиков ИИ становится костылем, прикрывающим отсутствие фундаментальных знаний. 
+              <strong>Для меня ИИ — это мощный мультипликатор силы (force multiplier):</strong>
+            </p>
+
+            <div class="synergy-points">
+              <div class="synergy-item">
+                <div class="synergy-icon">⚡</div>
+                <div class="synergy-content">
+                  <h4>Мгновенная валидация и декомпозиция</h4>
+                  <p>Проверка архитектурных решений, моделирование крайних сценариев и стресс-тесты логики до написания первого модуля.</p>
+                </div>
+              </div>
+
+              <div class="synergy-item">
+                <div class="synergy-icon">🛡️</div>
+                <div class="synergy-content">
+                  <h4>Глубокий фундамент + точность</h4>
+                  <p>Я понимаю алгоритмы, структуры данных, сетевые протоколы и безопасность на уровне исходного кода, поэтому ставлю точные промпты и жестко контролирую каждый сгенерированный фрагмент.</p>
+                </div>
+              </div>
+
+              <div class="synergy-item">
+                <div class="synergy-icon">🚀</div>
+                <div class="synergy-content">
+                  <h4>Скорость студии в одном человеке</h4>
+                  <p>Автоматизация бойлерплейта, юнит-тестов и рутины высвобождает 90% времени для главного — бизнес-логики, UX и надежности системы.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Side Stats Card -->
+          <div class="about-side-cards">
+            <div class="about-stat-card">
+              <div class="stat-number">17</div>
+              <div class="stat-label">Лет</div>
+              <div class="stat-sub">Максимальная обучаемость, отсутствие устаревших догм и свежий инженерный взгляд</div>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="stat-number">35+</div>
+              <div class="stat-label">Репозиториев на GitHub</div>
+              <div class="stat-sub">От коммерческих лендингов и PWA до Telegram Business ботов и 3D визуализаций</div>
+            </div>
+
+            <div class="about-stat-card">
+              <div class="stat-number">16</div>
+              <div class="stat-label">Языков в реальном времени</div>
+              <div class="stat-sub">Синхронное распознавание, каскадный перевод и синтез речи в Voice-Translator</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: SKILLS GRID & AI-AUGMENTED ARSENAL -->
+    <section id="skills" class="skills-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;arsenal&gt;</span>
+          <h2 class="section-title">Технический арсенал</h2>
+          <p class="section-desc">Стек технологий + то, что современная связка разработчика и ИИ делает на ура</p>
+        </div>
+
+        <div class="skills-grid">
+          <!-- Card 1: Frontend & Interactive Web -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">🎨</span>
+              <div>
+                <h3 class="category-name">Frontend &amp; Interactive Web</h3>
+                <span class="category-tagline">Интерфейсы, анимация, Web APIs</span>
+              </div>
+            </div>
+            <ul class="skills-list">
+              <li class="skill-pill"><span>JavaScript (ES6+)</span></li>
+              <li class="skill-pill"><span>HTML5 / Semantic</span></li>
+              <li class="skill-pill"><span>Modern CSS3 &amp; Grid</span></li>
+              <li class="skill-pill"><span>Three.js / WebGL / Canvas</span></li>
+              <li class="skill-pill"><span>Web Speech API (STT &amp; TTS)</span></li>
+              <li class="skill-pill"><span>PWA &amp; Offline Cache</span></li>
+              <li class="skill-pill"><span>Mobile-First Responsive</span></li>
+              <li class="skill-pill"><span>SVG &amp; CSS Animations</span></li>
+            </ul>
+          </div>
+
+          <!-- Card 2: Backend, Bots & Logic -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">⚙️</span>
+              <div>
+                <h3 class="category-name">Backend &amp; Telegram Ecosystem</h3>
+                <span class="category-tagline">Серверная логика, боты, автоматизация</span>
+              </div>
+            </div>
+            <ul class="skills-list">
+              <li class="skill-pill"><span>Python (AsyncIO)</span></li>
+              <li class="skill-pill"><span>Telegram Business API</span></li>
+              <li class="skill-pill"><span>Telegram Bot API</span></li>
+              <li class="skill-pill"><span>Node.js / Express</span></li>
+              <li class="skill-pill"><span>REST API Architecture</span></li>
+              <li class="skill-pill"><span>Serverless (Vercel Functions)</span></li>
+              <li class="skill-pill"><span>SQLite &amp; Database Design</span></li>
+              <li class="skill-pill"><span>Go &amp; Rust (основы/системно)</span></li>
+            </ul>
+          </div>
+
+          <!-- Card 3: AI-Augmented Engineering (ТО ЧТО ИИ ДЕЛАЕТ НА УРА) -->
+          <div class="skill-category-card highlight-ai-card">
+            <div class="ai-badge-marker">AI-POWERED</div>
+            <div class="category-header">
+              <span class="category-icon">🤖</span>
+              <div>
+                <h3 class="category-name">AI-Augmented Engineering</h3>
+                <span class="category-tagline">То, что я и ИИ делаем на ура за рекордные сроки</span>
+              </div>
+            </div>
+
+            <div class="ai-features-list">
+              <div class="ai-feature-row">
+                <span class="ai-feature-check">✦</span>
+                <div>
+                  <strong>Быстрое прототипирование MVP:</strong>
+                  <span>Превращение идеи в работающий интерактивный прототип за считанные часы.</span>
+                </div>
+              </div>
+
+              <div class="ai-feature-row">
+                <span class="ai-feature-check">✦</span>
+                <div>
+                  <strong>Генерация граничных сценариев и тестов:</strong>
+                  <span>Автоматическое покрытие нетривиальных кейсов и стресс-тестирование логики.</span>
+                </div>
+              </div>
+
+              <div class="ai-feature-row">
+                <span class="ai-feature-check">✦</span>
+                <div>
+                  <strong>Интеллектуальный рефакторинг:</strong>
+                  <span>Очистка кода, приведение к единым паттернам, оптимизация сложности алгоритмов.</span>
+                </div>
+              </div>
+
+              <div class="ai-feature-row">
+                <span class="ai-feature-check">✦</span>
+                <div>
+                  <strong>Интеграция LLM &amp; AI-пайплайнов:</strong>
+                  <span>Встраивание нейросетевых API (OpenAI, Claude, local models) в веб-приложения и ботов.</span>
+                </div>
+              </div>
+
+              <div class="ai-feature-row">
+                <span class="ai-feature-check">✦</span>
+                <div>
+                  <strong>Продвинутый Prompt Engineering:</strong>
+                  <span>Создание системных контекстов, function calling и агентов для бизнес-задач.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4: Security, Systems & Tools -->
+          <div class="skill-category-card">
+            <div class="category-header">
+              <span class="category-icon">🛡️</span>
+              <div>
+                <h3 class="category-name">Security, DevOps &amp; Tools</h3>
+                <span class="category-tagline">Инфраструктура и безопасность</span>
+              </div>
+            </div>
+            <ul class="skills-list">
+              <li class="skill-pill"><span>Linux (Kali / Debian)</span></li>
+              <li class="skill-pill"><span>Bash Scripting</span></li>
+              <li class="skill-pill"><span>Git &amp; GitHub Actions</span></li>
+              <li class="skill-pill"><span>Docker / Containerization</span></li>
+              <li class="skill-pill"><span>Burp Suite &amp; Wireshark</span></li>
+              <li class="skill-pill"><span>Nmap &amp; Network Audits</span></li>
+              <li class="skill-pill"><span>Vercel / Netlify Deploy</span></li>
+              <li class="skill-pill"><span>Ethical Hacking Mindset</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: PROJECTS SHOWCASE -->
+    <section id="projects" class="projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;portfolio&gt;</span>
+          <h2 class="section-title">Избранные проекты</h2>
+          <p class="section-desc">Реальные коммерческие запуски, интерактивные веб-приложения и Telegram-системы</p>
+        </div>
+
+        <!-- Filter Buttons -->
+        <div class="project-filter-buttons" id="project-filters">
+          <button class="filter-btn active" data-filter="all">Все проекты <span class="filter-count">8</span></button>
+          <button class="filter-btn" data-filter="web">Веб-приложения</button>
+          <button class="filter-btn" data-filter="bots">Telegram-боты</button>
+          <button class="filter-btn" data-filter="commercial">Коммерческие</button>
+          <button class="filter-btn" data-filter="algorithms">Алгоритмы &amp; Security</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projects-grid">
+          
+          <!-- PROJECT 1: Chronos -->
+          <article class="project-card" data-category="web">
+            <div class="card-inner">
+              <div class="project-type-tag">3D WebGL / Canvas</div>
+              <h3 class="project-title">⚪ Chronos — 3D визуализация прокрастинации</h3>
+              <p class="project-description">
+                Минималистичное веб-приложение, наглядно визуализирующее потерянное время в реальном времени. Интерактивная 3D-сфера постепенно деформируется и меняет цвет в чёрную массу по мере отвлечения пользователя.
+              </p>
+              <div class="project-highlights">
+                <span>✦ 3D WebGL / Canvas рендеринг</span>
+                <span>✦ Двуязычный интерфейс (RU / EN)</span>
+                <span>✦ Борьба с потерей продуктивности</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">WebGL / Canvas</span>
+                <span class="tech-tag">HTML5 / CSS3</span>
+              </div>
+              <div class="project-links">
+                <a href="https://whyudontcallme.github.io/chronos/Chronos.html" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                  <span>Живое демо</span>
+                  <span class="icon-external">↗</span>
+                </a>
+                <a href="https://github.com/whyudontcallme/chronos" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 2: Voice-Translator -->
+          <article class="project-card" data-category="web">
+            <div class="card-inner">
+              <div class="project-type-tag">Web Speech API / Multi-API</div>
+              <h3 class="project-title">🎙️ Voice-Translator — Голосовой переводчик</h3>
+              <p class="project-description">
+                Синхронный голосовой переводчик на 16 языков. Записывает речь через браузерный SpeechRecognition API, переводит параллельно на выбранные целевые языки через каскадную fallback-архитектуру и озвучивает результат через SpeechSynthesis.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Распознавание речи микрофоном</span>
+                <span>✦ Синхронный перевод на 16 языков</span>
+                <span>✦ Каскад API: Google, MyMemory, Bing</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">JavaScript (ES6+)</span>
+                <span class="tech-tag">SpeechRecognition API</span>
+                <span class="tech-tag">SpeechSynthesis</span>
+                <span class="tech-tag">REST APIs</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/Voice-Translator" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub Репозиторий</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 3: Schedule PWA -->
+          <article class="project-card" data-category="web">
+            <div class="card-inner">
+              <div class="project-type-tag">Mobile PWA / Offline</div>
+              <h3 class="project-title">📅 Schedule PWA — Мобильное расписание</h3>
+              <p class="project-description">
+                Прогрессивное мобильное приложение студенческого расписания. Автоматически определяет четность недели, ведет живой обратный отсчет до конца текущей пары, работает автономно без интернета и позволяет в один клик скопировать день в чат группы.
+              </p>
+              <div class="project-highlights">
+                <span>✦ PWA: установка на домашний экран</span>
+                <span>✦ Живой таймер текущей и следующей пары</span>
+                <span>✦ Тёмная и светлая темы, офлайн-режим</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">PWA / Service Worker</span>
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">CSS Flex/Grid</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/schedule" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub Репозиторий</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 4: All-Seeing Telegram Business Bot -->
+          <article class="project-card" data-category="bots">
+            <div class="card-inner">
+              <div class="project-type-tag">Telegram Business API / Python</div>
+              <h3 class="project-title">👁️ All-Seeing Telegram Business Bot</h3>
+              <p class="project-description">
+                Интеллектуальный бот для Telegram Business, интегрирующийся в режим бизнес-чатов. Отслеживает и сохраняет удалённые и отредактированные сообщения собеседников в личных диалогах, уведомляя владельца об оригинальном тексте, а также идентифицирует новых пользователей.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Telegram Business Chatbots integration</span>
+                <span>✦ Восстановление удаленных сообщений</span>
+                <span>✦ База данных аудита и оповещения</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python 3</span>
+                <span class="tech-tag">Telegram Business API</span>
+                <span class="tech-tag">ConfigParser / DB</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/spy-seeing-Telegram-bot" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub Репозиторий</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 5: IK-Sushka Commercial Landing -->
+          <article class="project-card" data-category="commercial">
+            <div class="card-inner">
+              <div class="project-type-tag">Коммерческий Web / Serverless</div>
+              <h3 class="project-title">🏭 IK-Sushka — Промышленные сушильные линии</h3>
+              <p class="project-description">
+                Полноценная коммерческая посадочная платформа для завода промышленного инфракрасного сушильного оборудования (пищевые линии, химическая отрасль, BARF-корма). Включает интерактивные калькуляторы характеристик и отказоустойчивую отправку заявок в Telegram через Vercel Serverless.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Высокая конверсия и интерактивные расчеты</span>
+                <span>✦ Vercel Serverless Function relay в Telegram</span>
+                <span>✦ Многостраничные спецификации (Food, Chem, BARF)</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">HTML5 / CSS3</span>
+                <span class="tech-tag">JavaScript ES6+</span>
+                <span class="tech-tag">Vercel API / Telegram Relay</span>
+              </div>
+              <div class="project-links">
+                <a href="https://ik-sushka.vercel.app" target="_blank" rel="noopener noreferrer" class="link-btn primary-link">
+                  <span>Живой сайт (Vercel)</span>
+                  <span class="icon-external">↗</span>
+                </a>
+                <a href="https://github.com/whyudontcallme/ik-sushka" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 6: GAIA-RU & ROI Calculator -->
+          <article class="project-card" data-category="commercial">
+            <div class="card-inner">
+              <div class="project-type-tag">Корпоративный сайт / Калькулятор</div>
+              <h3 class="project-title">🌱 GAIA-RU — Сайт дистрибьютора &amp; Калькулятор</h3>
+              <p class="project-description">
+                Многостраничный сайт официального представителя корейской корпорации GAIA Corp. по переработке органических отходов. Включает комплексный интерактивный калькулятор окупаемости оборудования GC-серии, каталог и документацию.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Каталог промышленных установок</span>
+                <span>✦ Инженерный калькулятор окупаемости и объема</span>
+                <span>✦ Адаптивность и чистый JS без тяжелых библиотек</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">HTML5 / Semantic</span>
+                <span class="tech-tag">CSS Grid / Flex</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/gayanew" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub (gayanew)</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+                <a href="https://github.com/whyudontcallme/gaia-calculator" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub (Калькулятор)</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 7: MIR Club -->
+          <article class="project-card" data-category="commercial">
+            <div class="card-inner">
+              <div class="project-type-tag">Коммерческий портал</div>
+              <h3 class="project-title">✨ MIR Club — Корпоративная платформа</h3>
+              <p class="project-description">
+                Веб-платформа компании mirclub с интерактивными презентациями услуг, личным кабинетом клиента и анимационной системой на чистом CSS/JS.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Интерактивная витрина сервисов</span>
+                <span>✦ Кабинет клиента и Netlify деплой</span>
+                <span>✦ Плавные микро-анимации интерфейса</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">JavaScript</span>
+                <span class="tech-tag">CSS Animations</span>
+                <span class="tech-tag">Netlify Config</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/mirclub" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub Репозиторий</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 8: YanaBot / VojaKatya -->
+          <article class="project-card" data-category="bots">
+            <div class="card-inner">
+              <div class="project-type-tag">Telegram Bot / Помощник</div>
+              <h3 class="project-title">⛺ YanaBot — Правовой ассистент вожатого</h3>
+              <p class="project-description">
+                Telegram-бот юридической и методической поддержки для вожатых детских лагерей. Помогает оперативно узнать права и обязанности, содержит чек-листы экстренных ситуаций и регламенты безопасности.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Правовая база для сотрудников лагерей</span>
+                <span>✦ Быстрый доступ к инструкциям безопасности</span>
+                <span>✦ Простая и надежная архитектура</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Telegram Bot API</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/yanabot" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub Репозиторий</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 9: A* Search Algorithm -->
+          <article class="project-card" data-category="algorithms">
+            <div class="card-inner">
+              <div class="project-type-tag">Алгоритмы / Python</div>
+              <h3 class="project-title">🧭 A* Pathfinding — Алгоритм поиска пути</h3>
+              <p class="project-description">
+                Реализация эвристического алгоритма A* (A-Star) на Python для нахождения оптимального кратчайшего маршрута на графах и двумерных сетках с учетом весов препятствий.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Эвристическая функция манхэттенского расстояния</span>
+                <span>✦ Оптимизация очереди с приоритетами</span>
+                <span>✦ Фундаментальные знания алгоритмики</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python 3</span>
+                <span class="tech-tag">Алгоритмы &amp; Структуры данных</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/astar" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub Репозиторий</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PROJECT 10: DeepGuard -->
+          <article class="project-card" data-category="algorithms">
+            <div class="card-inner">
+              <div class="project-type-tag">Security / Python</div>
+              <h3 class="project-title">🛡️ DeepGuard — Скрипты мониторинга безопасности</h3>
+              <p class="project-description">
+                Инструментарий для проверки целостности сетевого контура, мониторинга портов и автоматизированного анализа подозрительной активности.
+              </p>
+              <div class="project-highlights">
+                <span>✦ Скриптинг безопасности</span>
+                <span>✦ Сетевой аудит</span>
+              </div>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Linux / Network</span>
+              </div>
+              <div class="project-links">
+                <a href="https://github.com/whyudontcallme/deepguard" target="_blank" rel="noopener noreferrer" class="link-btn code-link">
+                  <span>GitHub Репозиторий</span>
+                  <span class="icon-gh">🐙</span>
+                </a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: EXPERIENCE & WORKFLOW -->
+    <section id="experience" class="experience-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;process&gt;</span>
+          <h2 class="section-title">Как я работаю над задачами</h2>
+          <p class="section-desc">От постановки проблемы до отказоустойчивого продакшна</p>
+        </div>
+
+        <div class="workflow-steps">
+          <div class="step-card">
+            <div class="step-num">01</div>
+            <h3 class="step-title">Архитектурный анализ</h3>
+            <p class="step-text">
+              Глубоко вникаю в бизнес-требования. Формирую структуру данных, протоколы взаимодействия и крайние сценарии. Использую ИИ для быстрого моделирования архитектурных альтернатив.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">02</div>
+            <h3 class="step-title">AI-ускоренная разработка</h3>
+            <p class="step-text">
+              Пишу надежный, чистый код. Автоматизирую генерацию тестов, бойлерплейта и валидаторов. Концентрируюсь на критической бизнес-логике и чистоте архитектуры.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">03</div>
+            <h3 class="step-title">Тестирование и безопасность</h3>
+            <p class="step-text">
+              Проверяю интерфейс на адаптивность и кроссбраузерность, тестирую API на утечки и устойчивость к некорректным входным данным.
+            </p>
+          </div>
+
+          <div class="step-card">
+            <div class="step-num">04</div>
+            <h3 class="step-title">Деплой и сопровождение</h3>
+            <p class="step-text">
+              Настраиваю Vercel / Netlify / серверную среду, подключаю мониторинг и оповещения в Telegram, передаю чистую документацию.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6: CONTACTS & HIRE ME -->
+    <section id="contacts" class="contacts-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">&lt;connect&gt;</span>
+          <h2 class="section-title">Контакты &amp; Связь</h2>
+          <p class="section-desc">Открыт к предложениям о работе, стажировкам и интересным коммерческим проектам</p>
+        </div>
+
+        <div class="contacts-wrapper">
+          <!-- Contact Channels -->
+          <div class="contact-channels-grid">
+            
+            <!-- Telegram (Primary) -->
+            <a href="https://t.me/byecash" target="_blank" rel="noopener noreferrer" class="contact-card telegram-highlight">
+              <div class="contact-card-icon">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.19-.08-.05-.19-.02-.27 0-.12.03-1.99 1.27-5.62 3.72-.53.36-1.01.54-1.44.53-.47-.01-1.38-.27-2.06-.49-.83-.27-1.49-.42-1.43-.88.03-.24.37-.49 1.02-.75 3.98-1.73 6.64-2.88 7.97-3.44 3.79-1.59 4.58-1.87 5.09-1.88.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.02.16-.04.32z"/>
+                </svg>
+              </div>
+              <div class="contact-card-info">
+                <span class="contact-label">Telegram (предпочтительно)</span>
+                <span class="contact-value">@byecash</span>
+                <span class="contact-hint">Быстрый ответ в течение часа</span>
+              </div>
+              <span class="contact-action-arrow">↗</span>
+            </a>
+
+            <!-- GitHub -->
+            <a href="https://github.com/whyudontcallme" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <div class="contact-card-icon">🐙</div>
+              <div class="contact-card-info">
+                <span class="contact-label">GitHub</span>
+                <span class="contact-value">whyudontcallme</span>
+                <span class="contact-hint">35+ публичных репозиториев</span>
+              </div>
+              <span class="contact-action-arrow">↗</span>
+            </a>
+
+            <!-- Email -->
+            <div class="contact-card copyable-card" id="copy-email-btn" role="button" tabindex="0" title="Нажмите, чтобы скопировать email">
+              <div class="contact-card-icon">✉️</div>
+              <div class="contact-card-info">
+                <span class="contact-label">Email (нажмите для копирования)</span>
+                <span class="contact-value" id="email-text">whyudontcallme@gmail.com</span>
+                <span class="contact-hint" id="copy-status">Кликните, чтобы скопировать</span>
+              </div>
+              <span class="contact-action-copy">📋</span>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-card location-card">
+              <div class="contact-card-icon">📍</div>
+              <div class="contact-card-info">
+                <span class="contact-label">Локация &amp; Формат</span>
+                <span class="contact-value">Санкт-Петербург</span>
+                <span class="contact-hint">Готов к удаленной работе и проектной занятости</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Telegram Pitch Banner -->
+          <div class="contact-pitch-banner">
+            <div class="pitch-text">
+              <h3>Готовы обсудить вакансию или проект?</h3>
+              <p>Напишите мне напрямую в Telegram. Я всегда на связи и готов выполнить тестовое задание или обсудить архитектуру вашего сервиса.</p>
+            </div>
+            <a href="https://t.me/byecash" target="_blank" rel="noopener noreferrer" class="btn btn-primary pitch-btn">
+              <span>Написать @byecash</span>
+              <span class="btn-arrow">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- CLI MODAL DRAWER -->
+  <aside class="cli-drawer" id="cli-drawer" aria-hidden="true">
+    <div class="cli-window">
+      <div class="cli-header">
+        <div class="cli-controls">
+          <span class="dot red" id="cli-close-btn" title="Закрыть"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+        </div>
+        <div class="cli-title">whyudontcallme@terminal:~ (press ESC to exit)</div>
+        <button class="cli-close-x" id="cli-close-x" aria-label="Закрыть">&times;</button>
+      </div>
+      <div class="cli-body" id="cli-history">
+        <div class="cli-msg-welcome">
+          Добро пожаловать в терминал резюме Мусо Шокирова [whyudontcallme].<br>
+          Введите <span class="term-highlight">help</span> для просмотра списка доступных команд.
+        </div>
+      </div>
+      <div class="cli-input-line">
+        <span class="cli-prompt">&gt;</span>
+        <input type="text" id="cli-input" class="cli-input" placeholder="Введите команду (help, skills, projects, contact...)" autocomplete="off" spellcheck="false">
+      </div>
+    </div>
+  </aside>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <span class="footer-logo">&gt;_ whyudontcallme</span>
+        <span class="footer-copy">© 2026 Мусо Шокиров. Все права защищены.</span>
+      </div>
+      <div class="footer-center">
+        <span class="footer-status-pill">● System status: All services operational</span>
+      </div>
+      <div class="footer-right">
+        <a href="#hero" class="btn-back-to-top">Наверх ↑</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast-message" aria-live="polite"></div>
+
+  <!-- Scripts -->
+  <script src="main.js"></script>
+</body>
+</html>
